@@ -1,26 +1,22 @@
 const { Engine, Render, Runner, World, Bodies, MouseConstraint, Mouse } = Matter
 
-// Engine - current state to new state
-// Render - draw in screen
-// Runner - coordinate updates between engine and world
-// Bodies - all the shapes
 const width = 800;
 const height = 600;
 
 const engine = Engine.create();
-// engine creates world
+
 const { world } = engine;
 const render = Render.create({
     element: document.body,
-    //render into body the element created is a canvas element 
+    
     engine: engine,
-    //what engine to use
+    
     options: {
         wireframes: false, 
         width: width,
         height: height
     }
-    // width and height of canvas created
+   
 });
 
 Render.run(render);
@@ -41,13 +37,6 @@ const walls = [
 
 World.add(world, walls)
 
-//200 is position x and y axis of center
-//50 is width and height
-//used bodies to create a shape (rectangle)
-//defaulted with gravity
-
-
-// need to add to world
 
 // Random Shapes
 for(let i = 0; i < 10; i++) {
