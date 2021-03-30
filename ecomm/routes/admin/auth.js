@@ -13,7 +13,7 @@ router.get('/signup', (req, res) => {
   
 router.post('/signup', [
     requireEmail,
-    requirePassword,
+    requirePassword, 
     requirePasswordConfirmation
     ], async (req,res) => {
         const errors = validationResult(req);
